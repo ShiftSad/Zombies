@@ -12,5 +12,6 @@ repositories {
 
 dependencies {
     implementation("net.minestom:minestom-snapshots:7ce047b22e")
+    implementation("dev.hollowcube:polar:1.11.2")
     implementation("ch.qos.logback:logback-classic:1.5.6")
 }

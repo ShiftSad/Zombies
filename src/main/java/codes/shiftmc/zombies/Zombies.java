@@ -8,17 +8,20 @@ import net.minestom.server.entity.GameMode;
 import net.minestom.server.event.player.AsyncPlayerConfigurationEvent;
 import net.minestom.server.event.player.PlayerChatEvent;
 import net.minestom.server.event.player.PlayerSpawnEvent;
-import net.minestom.server.event.player.PlayerStartSneakingEvent;
 import net.minestom.server.event.server.ServerTickMonitorEvent;
 import net.minestom.server.instance.LightingChunk;
 import net.minestom.server.instance.block.Block;
 
+import java.nio.file.Path;
 import java.text.DecimalFormat;
 
 public class Zombies {
 
     public static void main(String[] args) {
         final var server = MinecraftServer.init();
+
+        // Convert anvil worlds
+        new WorldConverter(Path.of("./anvil"));
 
         final var instanceManager = MinecraftServer.getInstanceManager();
         final var instanceContainer = instanceManager.createInstanceContainer();
